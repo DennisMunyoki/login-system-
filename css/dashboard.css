@@ -1,0 +1,240 @@
+:root {
+    --primary-color: #5c6bc0;
+    --primary-dark: #3f51b5;
+    --secondary-color: #4caf50;
+    --secondary-dark: #388e3c;
+    --error-color: #e53935;
+    --success-color: #4caf50;
+    --text-color: #333;
+    --light-gray: #f4f4f9;
+    --white: #ffffff;
+    --border-radius: 8px;
+    --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --sidebar-width: 250px;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-gray);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.dashboard {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: var(--sidebar-width);
+    background-color: var(--primary-dark);
+    color: var(--white);
+    padding: 1.5rem 1rem;
+    position: fixed;
+    height: 100%;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--white);
+    font-size: 1.5rem;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar nav li {
+    margin-bottom: 0.5rem;
+}
+
+.sidebar nav a {
+    color: var(--white);
+    text-decoration: none;
+    display: block;
+    padding: 0.75rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.sidebar nav a:hover {
+    background-color: var(--primary-color);
+    transform: translateX(5px);
+}
+
+.sidebar nav a.active {
+    background-color: var(--primary-color);
+    font-weight: bold;
+    transform: translateX(5px);
+}
+
+.main-content {
+    flex: 1;
+    padding: 2rem;
+    margin-left: var(--sidebar-width);
+    background-color: var(--light-gray);
+    min-height: 100vh;
+}
+
+.content-section {
+    max-width: 800px;
+    margin: 0 auto;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-top: 1.5rem;
+}
+
+.profile-card {
+    padding: 2rem;
+}
+
+.profile-info p {
+    margin-bottom: 1.25rem;
+    font-size: 1.1rem;
+}
+
+.profile-info strong {
+    color: var(--text-color);
+    min-width: 120px;
+    display: inline-block;
+}
+
+.survey-section {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-bottom: 1.5rem;
+    border: 1px solid #eee;
+}
+
+.survey-section legend {
+    font-weight: 600;
+    color: var(--primary-dark);
+    padding: 0 0.5rem;
+}
+
+.survey-question {
+    margin-bottom: 1.5rem;
+}
+
+.survey-question p {
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+}
+
+.options {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.options label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.rating {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+.rating label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: var(--light-gray);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.rating label:hover {
+    background-color: #e0e0e0;
+}
+
+.submit-btn {
+    background-color: var(--secondary-color);
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: var(--border-radius);
+    color: var(--white);
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: var(--secondary-dark);
+}
+
+.message {
+    text-align: center;
+    margin-top: 1rem;
+    min-height: 20px;
+    font-weight: 500;
+}
+
+.error {
+    color: var(--error-color);
+}
+
+.success {
+    color: var(--success-color);
+}
+
+.current-date {
+    color: #666;
+    font-style: italic;
+}
+
+.hidden {
+    display: none !important;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+    .dashboard {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+        position: relative;
+        height: auto;
+        padding: 1rem;
+    }
+    
+    .main-content {
+        margin-left: 0;
+        padding: 1.5rem;
+    }
+    
+    .sidebar nav a {
+        padding: 0.5rem;
+    }
+}

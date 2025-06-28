@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <div class="dashboard">
+        <aside class="sidebar">
+            <h2>Menu</h2>
+            <nav>
+                <ul>
+                    <li><a href="#" id="homeBtn" class="active">🏠 Home</a></li>
+                    <li><a href="#" id="profileBtn">👤 Profile</a></li>
+                    <li><a href="#" id="surveyBtn">📝 Survey</a></li>
+                    <li><a href="#" id="logoutBtn">🚪 Logout</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <section id="homeContent" class="content-section">
+                <h1>Welcome, <span id="welcomeUsername"></span>! 👋</h1>
+                <div class="card">
+                    <p>You are successfully logged in to your account.</p>
+                    <p class="current-date">Today is <span id="currentDate"></span>.</p>
+                </div>
+            </section>
+
+            <section id="profileContent" class="content-section hidden">
+                <h1>Your Profile</h1>
+                <div class="card profile-card">
+                    <div class="profile-info">
+                        <p><strong>Username:</strong> <span id="profileUsername"></span></p>
+                        <p><strong>Email:</strong> <span id="profileEmail"></span></p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="surveyContent" class="content-section hidden">
+                <h1>Quick Survey</h1>
+                <form id="surveyForm">
+                    <fieldset class="survey-section">
+                        <legend>True or False</legend>
+                        <div class="survey-question">
+                            <p>1. "You enjoy listening to music."</p>
+                            <div class="options">
+                                <label><input type="radio" name="q1" value="true" required> True</label>
+                                <label><input type="radio" name="q1" value="false"> False</label>
+                            </div>
+                        </div>
+                        <div class="survey-question">
+                            <p>2. "Morning is the best time to be productive."</p>
+                            <div class="options">
+                                <label><input type="radio" name="q2" value="true" required> True</label>
+                                <label><input type="radio" name="q2" value="false"> False</label>
+                            </div>
+                        </div>
+                        <div class="survey-question">
+                            <p>3. "You prefer tea over coffee."</p>
+                            <div class="options">
+                                <label><input type="radio" name="q3" value="true" required> True</label>
+                                <label><input type="radio" name="q3" value="false"> False</label>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="survey-section">
+                        <legend>Short Answer</legend>
+                        <div class="survey-question">
+                            <p>4. "What's your favorite day of the week?"</p>
+                            <input type="text" name="q4" placeholder="e.g., Friday, Sunday..." required>
+                        </div>
+                        <div class="survey-question">
+                            <p>5. "What's a hobby or activity you enjoy?"</p>
+                            <input type="text" name="q5" placeholder="e.g., Drawing, gaming..." required>
+                        </div>
+                        <div class="survey-question">
+                            <p>6. "If you could visit any place, where would you go?"</p>
+                            <input type="text" name="q6" placeholder="e.g., Paris, beach..." required>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="survey-section">
+                        <legend>Quick Opinion</legend>
+                        <div class="survey-question">
+                            <p>7. "Rate how your day is going (1 = Bad, 5 = Awesome):"</p>
+                            <div class="rating">
+                                <label><input type="radio" name="q7" value="1" required> 1</label>
+                                <label><input type="radio" name="q7" value="2"> 2</label>
+                                <label><input type="radio" name="q7" value="3"> 3</label>
+                                <label><input type="radio" name="q7" value="4"> 4</label>
+                                <label><input type="radio" name="q7" value="5"> 5</label>
+                            </div>
+                        </div>
+                        <div class="survey-question">
+                            <p>8. "Describe your mood in one word:"</p>
+                            <input type="text" name="q8" placeholder="e.g., Happy, tired..." required>
+                        </div>
+                    </fieldset>
+
+                    <button type="submit" class="submit-btn">Submit Survey</button>
+                </form>
+                <p id="surveyMessage" class="message"></p>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
